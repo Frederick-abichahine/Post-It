@@ -39,6 +39,23 @@ textarea {
 /* Other */
 /* ------------------------------------- */
 
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.top_bar {
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
 .top_bar_info {
 
     width: 100%;
