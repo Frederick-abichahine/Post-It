@@ -1,3 +1,30 @@
+/* Importing fonts */
+/* ------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Updating default CSS */
+/* ------------------------------------- */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+button,
+input,
+select,
+textarea {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Updating default CSS */
+/* ------------------------------------- */
+
 .top_bar_info {
 
     width: 100%;
