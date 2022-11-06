@@ -54,6 +54,7 @@ img {
     top: 0;
     left: 0;
     z-index: 2;
+    margin-top: 35px;
   }
 
 .top_bar_info {
