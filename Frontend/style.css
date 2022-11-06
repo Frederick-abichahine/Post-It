@@ -22,7 +22,21 @@ textarea {
   font-family: 'Roboto', sans-serif;
 }
 
-/* Updating default CSS */
+/* Accessing root element of the tree */
+/* ------------------------------------- */
+
+:root {
+    --primary: hsl(0, 0%, 100%);
+    --secondary: hsl(0, 0%, 98%);
+    --border: hsl(0, 0%, 86%);
+    --img-border: hsla(0, 0%, 0%, 0.1);
+    --text-dark: hsl(0, 0%, 15%);
+    --text-light: hsl(0, 0%, 60%);  
+    --header-height: 44px;
+    --nav-height: 44px;
+  }
+
+/* Other */
 /* ------------------------------------- */
 
 .top_bar_info {
