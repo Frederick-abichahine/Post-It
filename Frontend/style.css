@@ -28,7 +28,7 @@ textarea {
 :root {
     --primary: hsl(0, 0%, 100%);
     --secondary: hsl(0, 0%, 98%);
-    --border: hsl(0, 0%, 86%);
+    --border: #008db9;
     --img-border: hsla(0, 0%, 0%, 0.1);
     --text-dark: hsl(0, 0%, 15%);
     --text-light: hsl(0, 0%, 60%);  
@@ -55,7 +55,17 @@ img {
     left: 0;
     z-index: 2;
     margin-top: 35px;
-  }
+}
+
+.top_bar::after {
+    content: '';
+    position: absolute;
+    top: 85px;
+    width: 100%;
+    height: 1.5px;
+    background-color: var(--border);
+    
+}
 
 .top_bar_info {
 
