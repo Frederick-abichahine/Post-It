@@ -1,10 +1,10 @@
 /* Importing fonts */
-/* ------------------------------------- */
+/* ###################################### */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 /* Updating default CSS */
-/* ------------------------------------- */
+/* ###################################### */
 
 *,
 *::after,
@@ -23,7 +23,7 @@ textarea {
 }
 
 /* Accessing root element of the tree */
-/* ------------------------------------- */
+/* ###################################### */
 
 :root {
     --primary: hsl(0, 0%, 100%);
@@ -37,7 +37,7 @@ textarea {
   }
 
 /* Other */
-/* ------------------------------------- */
+/* ###################################### */
 
 img {
     display: block;
@@ -68,11 +68,37 @@ img {
 }
 
 .top_bar_info {
-
     width: 100%;
     max-width: 975px;
     padding: 0 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.top_bar_search {
+    width: 40%;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 16%;
+}
+
+.top_bar_search input {
+    width: 50%;
+    height: 130%;
+    background-color: var(--secondary);
+    padding: 5px 10px 5px 20px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-light);
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+  
+.top_bar_search input:focus {
+    color: var(--text-dark);
 }
