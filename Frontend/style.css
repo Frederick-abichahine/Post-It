@@ -82,11 +82,11 @@ img {
     display: flex;
     align-items: center;
     position: relative;
-    margin-right: 20%;
+    margin-right: 22%;
 }
 
 .search_icon {
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .top_bar_search input {
