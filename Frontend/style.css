@@ -32,17 +32,19 @@ textarea {
     --img-border: hsla(0, 0%, 0%, 0.1);
     --text-dark: hsl(0, 0%, 15%);
     --text-light: hsl(0, 0%, 60%);  
-    --header-height: 44px;
-    --nav-height: 44px;
+    --header-height: 130px;
+    --nav-height: 130px;
 }
 
-:root.night_mode { /* when we toggle to dark mode */
+:root.night_mode {   /* when we toggle to dark mode */
     --primary: hsl(0, 0%, 0%);
     --secondary: hsl(0, 0%, 2%);
     --border: hsl(194, 100%, 36%);
     --img-border: hsla(0, 0%, 100%, 0.1);
     --text-dark: hsl(0, 0%, 98%);
     --text-light: hsl(0, 0%, 60%);
+    --header-height: 130px;
+    --nav-height: 130px;
 }
 
 /* Other */
@@ -63,13 +65,12 @@ img {
     top: 0;
     left: 0;
     z-index: 2;
-    margin-top: 35px;
 }
 
 .top_bar::after {
     content: '';
     position: absolute;
-    top: 85px;
+    top: 130px;
     width: 100%;
     height: 1.5px;
     background-color: var(--border);
@@ -141,6 +142,8 @@ img {
 :root.night_mode .dark_theme_btn {
     display: none;
 }
+
+/* Profile */
 
 .profile_btn {
     display:flex;
