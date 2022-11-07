@@ -36,14 +36,11 @@ textarea {
     --nav-height: 44px;
 }
 
-:root.darkTheme { /* when we toggle to dark mode */
+:root.night_mode { /* when we toggle to dark mode */
     --primary: hsl(0, 0%, 0%);
     --secondary: hsl(0, 0%, 2%);
-    --border: hsl(0, 0%, 15%);
-  
-    --story-border: hsl(0, 0%, 44%);
+    --border: hsl(194, 100%, 36%);
     --img-border: hsla(0, 0%, 100%, 0.1);
-  
     --text-dark: hsl(0, 0%, 98%);
     --text-light: hsl(0, 0%, 60%);
 }
@@ -88,6 +85,8 @@ img {
     align-items: center;
 }
 
+/* Search Bar */
+
 .top_bar_search {
     width: 40%;
     height: 28px;
@@ -117,4 +116,28 @@ img {
   
 .top_bar_search input:focus {
     color: var(--text-dark);
+}
+
+/* Switching Theme */
+
+.theme_btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.light_theme_btn {
+    display: none;
+}
+
+.dark_theme_btn {
+    display: unset;
+}
+
+:root.night_mode .light_theme_btn {
+    display: unset;
+}
+
+:root.night_mode .dark_theme_btn {
+    display: none;
 }
