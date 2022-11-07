@@ -93,7 +93,7 @@ img {
     display: flex;
     align-items: center;
     position: relative;
-    margin-right: 22%;
+    /* margin-right: 10%; */
 }
 
 .search_icon {
