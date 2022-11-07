@@ -20,7 +20,15 @@ function setStartingTheme(themeKey) {
     }
 }
 
+change_theme.addEventListener('click', () => {
 
+    document.documentElement.classList.toggle('night_mode'); //changing the root
+    if (document.documentElement.classList.contains('night_mode')) {
+      localStorage.setItem('theme', 'dark'); // adding theme to local storage
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+});
   
   
 
