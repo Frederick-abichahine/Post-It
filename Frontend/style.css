@@ -93,7 +93,7 @@ img {
     display: flex;
     align-items: center;
     position: relative;
-    /* margin-right: 10%; */
+    margin-left: 17%;
 }
 
 .search_icon {
@@ -142,13 +142,11 @@ img {
     display: none;
 }
 
-/* .profile_border_btn {
-    
-} */
-
 .profile_btn {
-    display: flex;
-    height: 60px;
-    width: 60px;
+    display:flex;
+    height: 80px;
+    width: 80px;
     border-radius: 100%;
+    border-color:var(--border);
+    cursor: pointer;
 }
