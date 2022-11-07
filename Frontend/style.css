@@ -25,16 +25,28 @@ textarea {
 /* Accessing root element of the tree */
 /* ###################################### */
 
-:root {
+:root { /* when we toggle to light mode */
     --primary: hsl(0, 0%, 100%);
     --secondary: hsl(0, 0%, 98%);
-    --border: #008db9;
+    --border: hsl(194, 100%, 36%);
     --img-border: hsla(0, 0%, 0%, 0.1);
     --text-dark: hsl(0, 0%, 15%);
     --text-light: hsl(0, 0%, 60%);  
     --header-height: 44px;
     --nav-height: 44px;
-  }
+}
+
+:root.darkTheme { /* when we toggle to dark mode */
+    --primary: hsl(0, 0%, 0%);
+    --secondary: hsl(0, 0%, 2%);
+    --border: hsl(0, 0%, 15%);
+  
+    --story-border: hsl(0, 0%, 44%);
+    --img-border: hsla(0, 0%, 100%, 0.1);
+  
+    --text-dark: hsl(0, 0%, 98%);
+    --text-light: hsl(0, 0%, 60%);
+}
 
 /* Other */
 /* ###################################### */
