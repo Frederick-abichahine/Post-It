@@ -141,3 +141,14 @@ img {
 :root.night_mode .dark_theme_btn {
     display: none;
 }
+
+/* .profile_border_btn {
+    
+} */
+
+.profile_btn {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+}
