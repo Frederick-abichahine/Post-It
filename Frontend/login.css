@@ -18,8 +18,27 @@ body{
     padding: 0 2rem;
 }
 
+.login-content{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+}
+
 .img{
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+}
+
+.img img{
+	width: 500px;
+}
+
+form{
+	width: 360px;
+}
+
+.login-content img{
+    height: 100px;
 }
