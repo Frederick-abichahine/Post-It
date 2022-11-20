@@ -3,6 +3,7 @@
 // ############################################
 
 const pages = {}
+const base_url = "https://localhost/Post-It/Backend/"
 
 // ###################
 //      Functions
@@ -58,7 +59,16 @@ pages.loadLogin = () => {
   const btn = document.getElementById('btn')
   btn.addEventListener('click', async function() {
     const name = username.value //getting the value from the input
+    const url = base_url + "get_login_info.php?username=" + name
   })
+}
+
+pages.getAPI = async (url) => {
+  try {
+    return await axios(url)
+  } catch (error) {
+    console.log("Error: ", error)
+  }
 }
 
   
