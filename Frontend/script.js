@@ -54,6 +54,11 @@ pages.loadLogin = () => {
     input.addEventListener("focus", addFocus)
     input.addEventListener("blur", removeFocus)
   })
+  const username = document.getElementById('username')
+  const btn = document.getElementById('btn')
+  btn.addEventListener('click', async function() {
+    const name = username.value //getting the value from the input
+  })
 }
 
   
