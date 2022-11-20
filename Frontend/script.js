@@ -21,13 +21,13 @@ pages.loadIndex = () => {
   document.onload = setStartingTheme(localStorage.getItem('theme'))
   function setStartingTheme(themeKey) {
       if (themeKey === 'dark') {
-        document.documentElement.classList.add('night_mode');
+        document.documentElement.classList.add('night_mode')
       } else {
-        document.documentElement.classList.remove('night_mode');
+        document.documentElement.classList.remove('night_mode')
       }
   }
   change_theme.addEventListener('click', () => {
-    document.documentElement.classList.toggle('night_mode'); //changing the root
+    document.documentElement.classList.toggle('night_mode') //changing the root
     if (document.documentElement.classList.contains('night_mode')) {
       localStorage.setItem('theme', 'dark') // adding dark theme to local storage
     } else {
@@ -40,16 +40,20 @@ pages.loadIndex = () => {
 
 pages.loadLogin = () => {
   const inputs = document.querySelectorAll(".input")
-  function addcl(){
+  function addFocus(){
     let parent = this.parentNode.parentNode
     parent.classList.add("focus")
   }
-  function remcl(){
+  function removeFocus(){
     let parent = this.parentNode.parentNode
     if(this.value == ""){
       parent.classList.remove("focus")
     }
   }
+  inputs.forEach(input => {
+    input.addEventListener("focus", addFocus)
+    input.addEventListener("blur", removeFocus)
+  })
 }
 
   
