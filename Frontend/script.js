@@ -61,9 +61,12 @@ pages.loadLogin = () => {
     const name = username.value //getting the value from the input
     const url = base_url + "get_login_info.php?username=" + name
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     await pages.getAPI(url)
     location.assign('./index.html')
 =======
+=======
+>>>>>>> Stashed changes
     const resp = await pages.getAPI(url)
     const message = document.getElementById('title')
     if(resp.data[0] == null){
@@ -71,6 +74,9 @@ pages.loadLogin = () => {
     } else {
       location.assign('./index.html')
     }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   })
 }
