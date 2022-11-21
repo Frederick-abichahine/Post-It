@@ -1,11 +1,11 @@
 <?php
     include("connection.php");
     
-    if(isset($_GET['username'])) {
-
+    if(isset($_GET['username']) && isset($_GET['password'])) {
         $username = $_GET['username'];
-        $query = $mysqli -> prepare("SELECT * FROM users WHERE username = ?");
-        $query -> bind_param("s", $username);
+        $password = $_GET['password'];
+        $query = $mysqli -> prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+        $query -> bind_param("ss", $username, $password);
         $query -> execute();
         $result = $query -> get_result();
         $response = [];
