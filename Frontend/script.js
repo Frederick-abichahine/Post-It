@@ -3,7 +3,7 @@
 // ############################################
 
 const pages = {}
-const base_url = "https://localhost/Post-It/Backend/"
+const base_url = "http://localhost/Post-It/Backend/"
 
 // ###################
 //      Functions
@@ -60,8 +60,18 @@ pages.loadLogin = () => {
   btn.addEventListener('click', async function() {
     const name = username.value //getting the value from the input
     const url = base_url + "get_login_info.php?username=" + name
+<<<<<<< Updated upstream
     await pages.getAPI(url)
     location.assign('./index.html')
+=======
+    const resp = await pages.getAPI(url)
+    const message = document.getElementById('title')
+    if(resp.data[0] == null){
+      message.innerHTML = "<i><h6 style = \"color: red;\"> Incorrect Username or Password</h6></i>"
+    } else {
+      location.assign('./index.html')
+    }
+>>>>>>> Stashed changes
   })
 }
 
