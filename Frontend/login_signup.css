@@ -148,6 +148,10 @@ a{
 	transition: .3s;
 }
 
+.under-btn{
+	text-align: center !important;
+}
+
 a:hover{
 	color: #1ed2f2;
 }
