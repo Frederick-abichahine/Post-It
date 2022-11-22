@@ -100,23 +100,30 @@ pages.loadSignup = () => {
   })
   const username = document.getElementById('username')
   const password = document.getElementById('password')
+  const email = document.getElementById('email')
   const btn = document.getElementById('btn')
   btn.addEventListener('click', async function() {
     const name = username.value //getting the value from the input
     const pass = password.value
-    const url = base_url + "get_login_info.php?username=" + name + "&password=" + pass
-    const resp = await pages.getAPI(url)
-    const message = document.getElementById('title')
-    if(resp.data[0] == null) {
-      message.innerHTML = "<i><h6 style = \"color: red;\"> Incorrect Username or Password</h6></i>"
-    } else {
-      location.assign('./index.html')
+    const mail = email.value
+    const url = base_url + "post_signup_info.php?username=" + name + "&password=" + pass + "&email=" + mail
+    const data = {
+      username: name,
+      password: pass,
+      email: mail
     }
+    const resp = await pages.postAPI(url, data)
+    const message = document.getElementById('title')
+    console.log(resp.data)
+    // if(resp.data[0] == null) {
+    //   message.innerHTML = "<i><h6 style = \"color: red;\"> Incorrect Username or Password</h6></i>"
+    // } else {
+    //   location.assign('./index.html')
+    // }
   })
 }
 
 pages.postAPI = async (url, data, token = null) => {
-  //api_token, some APIs are authenticated so i cannot access them unless I am logged in so i need to pass a token to show that I am logged in
   try{
       return await axios.post( 
           url,  //we need the url to be able to post
