@@ -80,7 +80,42 @@ pages.getAPI = async (url) => {
   }
 }
 
-  
+// ------------------------------
+
+pages.loadSignup = () => {
+  const inputs = document.querySelectorAll(".input")
+  function addFocus(){
+    let parent = this.parentNode.parentNode
+    parent.classList.add("focus")
+  }
+  function removeFocus(){
+    let parent = this.parentNode.parentNode
+    if(this.value == ""){
+      parent.classList.remove("focus")
+    }
+  }
+  inputs.forEach(input => {
+    input.addEventListener("focus", addFocus)
+    input.addEventListener("blur", removeFocus)
+  })
+  const username = document.getElementById('username')
+  const password = document.getElementById('password')
+  const btn = document.getElementById('btn')
+  btn.addEventListener('click', async function() {
+    const name = username.value //getting the value from the input
+    const pass = password.value
+    const url = base_url + "get_login_info.php?username=" + name + "&password=" + pass
+    const resp = await pages.getAPI(url)
+    const message = document.getElementById('title')
+    if(resp.data[0] == null) {
+      message.innerHTML = "<i><h6 style = \"color: red;\"> Incorrect Username or Password</h6></i>"
+    } else {
+      location.assign('./index.html')
+    }
+  })
+}
+
+
   
 
 
