@@ -115,9 +115,19 @@ pages.loadSignup = () => {
   })
 }
 
-
-  
-
-
-
-
+pages.postAPI = async (url, data, token = null) => {
+  //api_token, some APIs are authenticated so i cannot access them unless I am logged in so i need to pass a token to show that I am logged in
+  try{
+      return await axios.post( 
+          url,  //we need the url to be able to post
+          data, //data is a JSON object that we send to the server
+          {
+              headers:{ //JSON object, this will let the backend know if the user is authenticated, if the user is logged in or not
+                  'Authorization' : "token" + token
+              }
+          }
+      )
+  }catch(error){
+      pages.Console("Error from linking (POST)", error)
+  }
+}
