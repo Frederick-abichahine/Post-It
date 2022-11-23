@@ -14,12 +14,12 @@ if(isset($_POST['username']) && $_POST['username'] != '' && isset($_POST['email'
     $result = $query -> get_result();
     $test = $result -> fetch_assoc();
     $response = [];
-    $response[] = "inside";
+    $response[] = true;
     echo json_encode($response);
 
 } else {
     $response = [];
-    $response["success"] = "outside";
+    $response["success"] = false;
     echo json_encode($response);
 }
 ?>
