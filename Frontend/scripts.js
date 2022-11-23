@@ -70,6 +70,10 @@ pages.loadLogin = () => {
       location.assign('./index.html')
     }
   })
+  const change_page = document.getElementById('under-btn')
+  change_page.addEventListener('click', () => {
+    location.assign('./signup.html')
+  })
 }
 
 pages.getAPI = async (url) => {
@@ -107,27 +111,24 @@ pages.loadSignup = () => {
     const pass = password.value
     const mail = email.value
     const url = base_url + "post_signup_info.php"
-    // const data = {
-    //   "username": name,
-    //   "email": mail,
-    //   "password": pass
-    // }
     const formData = new FormData();
     formData.append('username', name);
     formData.append('email', mail);
     formData.append('password', pass);
     const resp = await pages.postAPI(url, formData)
-    // const message = document.getElementById('title')
-    console.log(name)
-    console.log(pass)
-    console.log(mail)
-    //console.log(data)
-    console.log(resp.data)
-    // if(resp.data[0] == null) {
-    //   message.innerHTML = "<i><h6 style = \"color: red;\"> Incorrect Username or Password</h6></i>"
-    // } else {
-    //   location.assign('./index.html')
-    // }
+    const message = document.getElementById('title')
+    // console.log(resp)
+    // console.log(resp.data)
+    // console.log(resp.data[0])
+    if(!resp.data[0]) {
+      message.innerHTML = "<i><h6 style = \"color: red;\"> Please fill out all information</h6></i>"
+    } else {
+      location.assign('./login.html')
+    }
+  })
+  const change_page = document.getElementById('under-btn')
+  change_page.addEventListener('click', () => {
+    location.assign('./login.html')
   })
 }
 

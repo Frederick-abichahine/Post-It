@@ -150,6 +150,7 @@ a{
 
 .under-btn{
 	text-align: center !important;
+	cursor: pointer;
 }
 
 a:hover{
