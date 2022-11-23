@@ -155,6 +155,7 @@ a{
 
 a:hover{
 	color: #1ed2f2;
+	cursor: pointer;
 }
 
 .btn{
