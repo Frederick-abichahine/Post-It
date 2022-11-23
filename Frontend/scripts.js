@@ -3,7 +3,7 @@
 // ############################################
 
 const pages = {}
-const base_url = "http://localhost/Post-It/Backend/"
+const base_url = "http://localhost/postit/Backend/"
 
 // ###################
 //      Functions
@@ -106,14 +106,22 @@ pages.loadSignup = () => {
     const name = username.value //getting the value from the input
     const pass = password.value
     const mail = email.value
-    const url = base_url + "post_signup_info.php?username=" + name + "&password=" + pass + "&email=" + mail
-    const data = {
-      username: name,
-      password: pass,
-      email: mail
-    }
-    const resp = await pages.postAPI(url, data)
-    const message = document.getElementById('title')
+    const url = base_url + "post_signup_info.php"
+    // const data = {
+    //   "username": name,
+    //   "email": mail,
+    //   "password": pass
+    // }
+    const formData = new FormData();
+    formData.append('username', name);
+    formData.append('email', mail);
+    formData.append('password', pass);
+    const resp = await pages.postAPI(url, formData)
+    // const message = document.getElementById('title')
+    console.log(name)
+    console.log(pass)
+    console.log(mail)
+    //console.log(data)
     console.log(resp.data)
     // if(resp.data[0] == null) {
     //   message.innerHTML = "<i><h6 style = \"color: red;\"> Incorrect Username or Password</h6></i>"
@@ -135,7 +143,7 @@ pages.postAPI = async (url, data, token = null) => {
           }
       )
   }catch(error){
-      pages.Console("Error from linking (POST)", error)
+      console.log("Error from linking (POST)", error)
   }
 }
   
